@@ -54,8 +54,8 @@ class Movie{
 class Album{
     constructor(title, artist, trackCount){
         this.artist = artist;
-        this.title = title || 'Default Title';
         this.trackCount = trackCount;
+        this.title = title || 'Default Title';
         this.id = Math.floor(Math.random() * 10e16);
     }
 }
