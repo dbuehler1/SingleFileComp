@@ -19,9 +19,11 @@ function BagCollection(){
     arr.checkOut = function(items){
         console.log(arr);
         items.forEach(item => item.checkOut());
-        items.forEach(item => arr.splice(item), 1);
+        // items.forEach(item => arr.splice(item), 1);
+        arr.splice(0);
         return arr;
     }
+
     return arr;
 }
 export default BagCollection;

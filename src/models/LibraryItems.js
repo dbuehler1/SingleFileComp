@@ -4,6 +4,13 @@ function LibraryItem(media, removeFunction){
 
     // decorating/adding functionality to an existing object
     media.status = STATUSES.CHECKED_IN;
+    media.favorite = false;
+    media.favoriteToggle = function(){
+        this.favorite = !this.favorite;
+    }
+    media.isFavorite = function(){
+        return this.favorite === true;
+    }
 
     // methods
     media.checkIn = function(){
@@ -36,7 +43,8 @@ function LibraryItem(media, removeFunction){
     return media;
 }
 
-function Book(title, pages){
+function Book(title, pages, img){
+    this.img = img;
     this.pages = pages;
     this.title = title || 'Default Title';
     this.id = Math.floor(Math.random() * 10e16);
@@ -44,7 +52,8 @@ function Book(title, pages){
 
 // same as above using class syntax
 class Movie{
-    constructor(title, runningTime){
+    constructor(title, runningTime, img){
+        this.img = img;
         this.runningTime = runningTime;
         this.title = title || 'Default Title';
         this.id = Math.floor(Math.random() * 10e16);
@@ -52,7 +61,8 @@ class Movie{
 }
 
 class Album{
-    constructor(title, artist, trackCount){
+    constructor(title, artist, trackCount, img){
+        this.img = img;
         this.artist = artist;
         this.trackCount = trackCount;
         this.title = title || 'Default Title';
@@ -60,6 +70,15 @@ class Album{
     }
 }
 
+class Song{
+    constructor(title, artist, img){
+        this.img = img;
+        this.artist = artist;
+        this.title = title;
+        this.id = Math.floor(Math.random() * 10e16);
+    }
+}
+
 
 // export multiple classes/functions/objects/etc
-export {LibraryItem, Book, Movie, Album}
+export {LibraryItem, Book, Movie, Album, Song}

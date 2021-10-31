@@ -1,11 +1,17 @@
 <template>
-  <div class="card-columns">
+  <div>
+
+
+  <div class="row">
     <library-item v-for="(item, i) in cart"
                   v-on:removeMedia="$emit('removeMediaObj', $event)"
+
                   :elem-name="'bag'"
                   :item="item"
                   :key="i"
     ></library-item>
+
+  </div>
     <button @click="$emit('checkOut', items)">Check Out</button>
   </div>
 </template>

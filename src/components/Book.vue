@@ -1,5 +1,6 @@
 <template>
   <div class="book">
+    <p>Book</p>
     <h3 class="card-title">{{item.title}}</h3>
     <p class="card-text">Pages: {{item.pages}}</p>
   </div>
