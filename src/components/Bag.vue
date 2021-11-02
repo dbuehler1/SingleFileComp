@@ -5,14 +5,19 @@
   <div class="row">
     <library-item v-for="(item, i) in cart"
                   v-on:removeMedia="$emit('removeMediaObj', $event)"
-
                   :elem-name="'bag'"
                   :item="item"
                   :key="i"
     ></library-item>
 
   </div>
-    <button @click="$emit('checkOut', items)">Check Out</button>
+    <div class=" checkOutBtn ">
+      <button @click="$emit('checkOut', items)" class="btn btn-primary">Check Out
+        <span class="badge bg-secondary">{{items.length}}</span>
+      </button>
+    </div>
+    <br>
+
   </div>
 </template>
 
@@ -37,5 +42,8 @@ name: "Bag",
 </script>
 
 <style scoped>
-
+.checkOutBtn{
+  float: right;
+  padding-bottom: 2rem;
+}
 </style>

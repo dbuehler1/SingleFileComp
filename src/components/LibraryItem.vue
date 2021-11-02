@@ -1,5 +1,5 @@
 <template>
-  <div class="card col-md-2" :class="item.isAvailable() ? 'border-success' : 'border-warning'" style="border-width: 3px;">
+  <div class="card col-sm-3" :class="item.isAvailable() ? 'border-primary' : 'border-warning'" style="border-width: 1px;">
 
     <p>{{item.type}}</p>
     <!--                <h3 class="card-title">{{item.title}}</h3>-->
@@ -14,8 +14,8 @@
       <button @click="$emit('removeMedia', item)" class="btn btn-danger" v-if="elemName ==='bag'">Remove</button>
       <button @click="$emit('checkIn', item)" class="btn btn-info" v-if="elemName ==='library' && item.status === 'out'">Check In</button>
 <!--      <button @click="removeFunction(item)" class="btn btn-warning">Remove Me</button>-->
-      <button @click="$emit('addToCart', item)" class="btn btn-success" v-if="elemName ==='library' && item.status === 'in'">Add To Cart</button>
-      <button @click="item.favoriteToggle()" class="btn btn-warning" :class="item.isFavorite() ? 'border-success' : 'border-danger'">Favorite</button>
+      <button @click="$emit('addToCart', item)" class="btn btn-primary" v-if="elemName ==='library' && item.status === 'in'">Add To Cart</button>
+      <button @click="item.favoriteToggle()" class="btn btn-warning" :class="item.isFavorite() ? 'text-success' : 'text-light'"><i class="fas fa-star"></i></button>
     </div>
   </div>
 </template>

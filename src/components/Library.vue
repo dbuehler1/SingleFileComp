@@ -1,11 +1,14 @@
 <template>
-  <div>
-    <search-bar v-on:searchList="library.searchMedia($event)"></search-bar><br>
+  <div class="p-4">
+    <div class="search">
+
+      <search-bar class="col-md-10 " v-on:searchList="library.searchMedia($event)"></search-bar><br>
+    </div>
     <div class="row">
 
 
 
-      <library-item v-for="(item, i) in library"
+      <library-item class="p-2" v-for="(item, i) in library"
                     :item="item"
                     :elem-name="'library'"
                     v-on:addToCart="$emit('passToCart', $event)"
